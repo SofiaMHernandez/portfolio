@@ -5,541 +5,541 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sofía Hernández Bellone | Data Analyst</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
---bg:#080f1a;
---surface:#0e1c2f;
---card:#111f33;
---border:#1e3352;
---sky:#38bdf8;
---sky-dim:#0ea5e9;
---mint:#34d399;
---text:#e2eaf4;
---muted:#7a94b0;
---radius:14px;
-}
-
-html { scroll-behavior:smooth; }
-
-body{
-font-family:'DM Sans',sans-serif;
-background-color:var(--bg);
-color:var(--text);
-line-height:1.7;
-font-size:15px;
-}
-
-/* NOISE */
-
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-pointer-events:none;
-z-index:0;
-}
-
-.container{
-max-width:860px;
-margin:0 auto;
-padding:0 24px;
-position:relative;
-z-index:1;
-}
-
-a{text-decoration:none;color:inherit}
-
-/* NAV */
-
-nav{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(8,15,26,.85);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border);
-padding:14px 0;
-}
-
-nav .container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-nav .logo{
-font-family:'DM Serif Display',serif;
-font-size:17px;
-color:var(--sky);
-letter-spacing:.02em;
-}
-
-nav ul{
-display:flex;
-gap:28px;
-list-style:none;
-}
-
-nav ul a{
-font-size:13px;
-font-weight:500;
-color:var(--muted);
-letter-spacing:.05em;
-text-transform:uppercase;
-transition:color .2s;
-}
-
-nav ul a:hover{color:var(--sky)}
-
-/* HERO */
-
-.hero{
-padding:100px 0 80px;
-position:relative;
-}
-
-.hero-glow{
-position:absolute;
-top:-60px;
-left:-100px;
-width:500px;
-height:500px;
-background:radial-gradient(circle,rgba(56,189,248,.07) 0%,transparent 70%);
-pointer-events:none;
-}
-
-.hero-tag{
-display:inline-flex;
-align-items:center;
-gap:6px;
-font-size:12px;
-font-weight:600;
-letter-spacing:.1em;
-text-transform:uppercase;
-color:var(--mint);
-border:1px solid rgba(52,211,153,.3);
-border-radius:100px;
-padding:4px 12px;
-margin-bottom:24px;
-}
-
-.hero-tag::before{
-content:'';
-width:6px;
-height:6px;
-border-radius:50%;
-background:var(--mint);
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%,100%{opacity:1;transform:scale(1)}
-50%{opacity:.5;transform:scale(.8)}
-}
-
-.hero h1{
-font-family:'DM Serif Display',serif;
-font-size:clamp(36px,6vw,54px);
-color:var(--text);
-line-height:1.15;
-margin-bottom:10px;
-letter-spacing:-.01em;
-}
-
-.hero h1 span{
-color:var(--sky);
-font-size:.75em;
-}
-
-.hero .subtitle{
-font-size:17px;
-color:var(--muted);
-font-weight:300;
-margin-bottom:20px;
-}
-
-.hero .bio{
-max-width:580px;
-font-size:15px;
-color:var(--muted);
-margin-bottom:32px;
-line-height:1.8;
-}
-
-.hero-skills{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-top:10px;
-margin-bottom:32px;
-}
-
-.skill-pill{
-font-size:12px;
-font-weight:500;
-padding:5px 12px;
-border-radius:100px;
-background:var(--card);
-border:1px solid var(--border);
-color:var(--sky);
-letter-spacing:.03em;
-}
-
-.hero-cta{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-/* BUTTONS */
-
-.btn{
-display:inline-flex;
-align-items:center;
-gap:6px;
-padding:9px 18px;
-border-radius:8px;
-font-size:13px;
-font-weight:600;
-letter-spacing:.02em;
-transition:.2s;
-cursor:pointer;
-}
-
-.btn-primary{
-background:var(--sky);
-color:#080f1a;
-}
-
-.btn-primary:hover{
-background:var(--sky-dim);
-transform:translateY(-1px);
-}
-
-.btn-ghost{
-background:transparent;
-color:var(--text);
-border:1px solid var(--border);
-}
-
-.btn-ghost:hover{
-border-color:var(--sky);
-color:var(--sky);
-transform:translateY(-1px);
-}
-
-.btn-card{
-background:var(--surface);
-color:var(--sky);
-border:1px solid var(--border);
-font-size:12px;
-padding:6px 13px;
-}
-
-.btn-card:hover{
-background:var(--border);
-transform:translateY(-1px);
-}
-
-/* DIVIDER */
-
-.divider{
-height:1px;
-background:linear-gradient(to right,transparent,var(--border),transparent);
-margin:20px 0 60px;
-}
-
-/* SECTION */
-
-.section-header{
-margin-bottom:40px;
-}
-
-.section-label{
-font-size:11px;
-font-weight:700;
-letter-spacing:.15em;
-text-transform:uppercase;
-color:var(--sky);
-margin-bottom:8px;
-}
-
-.section-header h2{
-font-family:'DM Serif Display',serif;
-font-size:28px;
-font-weight:400;
-}
-
-/* ABOUT */
-
-#about{padding-bottom:70px}
-
-.about-card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:var(--radius);
-padding:32px;
-max-width:100%;
-}
-
-.about-card h3{
-font-size:13px;
-font-weight:600;
-color:var(--sky);
-letter-spacing:.05em;
-text-transform:uppercase;
-margin-bottom:10px;
-}
-
-.about-card p{
-font-size:14px;
-color:var(--muted);
-line-height:1.7;
-}
-
-/* PROJECTS */
-
-#projects{padding-bottom:80px}
-
-.project-card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:var(--radius);
-padding:28px;
-margin-bottom:20px;
-transition:border-color .25s,transform .25s;
-position:relative;
-overflow:hidden;
-}
-
-.project-card::before{
-content:'';
-position:absolute;
-top:0;
-left:0;
-right:0;
-height:2px;
-background:linear-gradient(to right,var(--sky),var(--mint));
-opacity:0;
-transition:opacity .25s;
-}
-
-.project-card:hover{
-border-color:rgba(56,189,248,.3);
-transform:translateY(-2px);
-}
-
-.project-card:hover::before{opacity:1}
-
-.project-top{
-display:flex;
-align-items:flex-start;
-justify-content:space-between;
-gap:16px;
-margin-bottom:12px;
-}
-
-.project-title{
-font-family:'DM Serif Display',serif;
-font-size:20px;
-font-weight:400;
-}
-
-.project-desc{
-font-size:14px;
-color:var(--muted);
-margin-bottom:16px;
-line-height:1.7;
-}
-
-.project-tools{
-display:flex;
-flex-wrap:wrap;
-gap:6px;
-margin-bottom:18px;
-}
-
-.tool-tag{
-font-size:11px;
-font-weight:600;
-padding:3px 10px;
-border-radius:6px;
-background:var(--surface);
-border:1px solid var(--border);
-color:var(--muted);
-letter-spacing:.04em;
-}
-
-.project-links{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-}
-
-/* SKILLS */
-
-#skills{padding-bottom:80px}
-
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px;
-}
-
-.skill-card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:var(--radius);
-padding:22px;
-transition:border-color .2s;
-}
-
-.skill-card:hover{border-color:rgba(56,189,248,.3)}
-
-.skill-card h3{
-font-size:12px;
-font-weight:700;
-letter-spacing:.08em;
-text-transform:uppercase;
-color:var(--sky);
-margin-bottom:12px;
-}
-
-.skill-list{
-list-style:none;
-display:flex;
-flex-direction:column;
-gap:6px;
-}
-
-.skill-list li{
-font-size:13px;
-color:var(--muted);
-display:flex;
-align-items:center;
-gap:7px;
-}
-
-.skill-list li::before{
-content:'▸';
-color:var(--sky);
-font-size:10px;
-}
-
-/* CONTACT */
-
-#contact{padding-bottom:80px}
-
-.contact-box{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:var(--radius);
-padding:40px;
-text-align:center;
-}
-
-.contact-box p{
-font-size:14px;
-color:var(--muted);
-margin-bottom:24px;
-max-width:480px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.contact-links{
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
-}
-
-/* FOOTER */
-
-footer{
-border-top:1px solid var(--border);
-padding:24px 0;
-text-align:center;
-font-size:12px;
-color:var(--muted);
-}
-
-/* RESPONSIVE */
-
-@media (max-width:640px){
-
-.skills-grid{grid-template-columns:1fr 1fr}
-
-.project-top{flex-direction:column}
-
-nav ul{gap:16px}
-
-}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #080f1a;
+    --surface:   #0e1c2f;
+    --card:      #111f33;
+    --border:    #1e3352;
+    --sky:       #38bdf8;
+    --sky-dim:   #0ea5e9;
+    --mint:      #34d399;
+    --text:      #e2eaf4;
+    --muted:     #7a94b0;
+    --radius:    14px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 15, 26, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--sky);
+    letter-spacing: 0.02em;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  nav ul a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--sky); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 100px 0 80px;
+    position: relative;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -60px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56,189,248,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mint);
+    border: 1px solid rgba(52,211,153,0.3);
+    border-radius: 100px;
+    padding: 4px 12px;
+    margin-bottom: 24px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--mint);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 6vw, 54px);
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 span { color: var(--sky); }
+
+  .hero .subtitle {
+    font-size: 17px;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .hero .bio {
+    max-width: 580px;
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+
+  .hero-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .skill-pill {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--sky);
+    letter-spacing: 0.03em;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--sky);
+    color: #080f1a;
+  }
+
+  .btn-primary:hover {
+    background: var(--sky-dim);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--sky);
+    color: var(--sky);
+    transform: translateY(-1px);
+  }
+
+  .btn-card {
+    background: var(--surface);
+    color: var(--sky);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    padding: 6px 13px;
+  }
+
+  .btn-card:hover {
+    background: var(--border);
+    transform: translateY(-1px);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 20px 0 60px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 8px;
+  }
+
+  .section-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    padding-bottom: 70px;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .about-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+
+  .about-card h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sky);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .about-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── PROJECTS ── */
+  #projects {
+    padding-bottom: 80px;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: border-color 0.25s, transform 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--sky), var(--mint));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(56,189,248,0.3);
+    transform: translateY(-2px);
+  }
+
+  .project-card:hover::before { opacity: 1; }
+
+  .project-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .badge {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(52,211,153,0.12);
+    color: var(--mint);
+    border: 1px solid rgba(52,211,153,0.25);
+  }
+
+  .project-desc {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .tool-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── SKILLS ── */
+  #skills {
+    padding-bottom: 80px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    transition: border-color 0.2s;
+  }
+
+  .skill-card:hover { border-color: rgba(56,189,248,0.3); }
+
+  .skill-card h3 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 12px;
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .skill-list li {
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .skill-list li::before {
+    content: '▸';
+    color: var(--sky);
+    font-size: 10px;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding-bottom: 80px;
+  }
+
+  .contact-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    text-align: center;
+  }
+
+  .contact-box p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .project-top { flex-direction: column; }
+    nav ul { gap: 16px; }
+  }
 
 </style>
 </head>
-
 <body>
 
+<!-- NAV -->
 <nav>
-<div class="container">
-<span class="logo">Sofía Hernández Bellone</span>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
+  <div class="container">
+    <span class="logo">Sofía Hernández Bellone</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
+<!-- HERO -->
 <div class="container">
-
-<section class="hero">
-
-<div class="hero-glow"></div>
-
-<div class="hero-tag">Open to opportunities</div>
-
-<h1>Chemical Engineer<br><span>Data Analyst</span></h1>
-
-<p class="subtitle">Buenos Aires, Argentina</p>
-
-<p class="bio">
-Recently graduated Chemical Engineer transitioning into data analytics with a strong analytical and quantitative background. 
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-tag">Open to opportunities</div>
+    <h1>Chemical Engineer<br><span>Data Analyst</span></h1>
+    <p class="subtitle">Buenos Aires, Argentina</p>
+    <p class="bio">
+      Recently graduated Chemical Engineer transitioning into data analytics with a strong analytical and quantitative background. 
 Passionate about transforming complex datasets into actionable insights and supporting data-driven decision making.
-</p>
+    </p>
+    <div class="hero-skills">
+      <span class="skill-pill">SQL</span>
+      <span class="skill-pill">MySQL</span>
+      <span class="skill-pill">Power BI</span>
+      <span class="skill-pill">Tableau</span>
+      <span class="skill-pill">Excel</span>
+      <span class="skill-pill">Data Visualization</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="https://www.linkedin.com/in/sofia-hernandez-bellone/?locale=en-US" class="btn btn-ghost" target="_blank">LinkedIn</a>
+      <a href="https://github.com/SofiaMHernandez" class="btn btn-ghost" target="_blank">GitHub</a>
+    </div>
+  </section>
 
-<div class="hero-skills">
-<span class="skill-pill">SQL</span>
-<span class="skill-pill">MySQL</span>
-<span class="skill-pill">Power BI</span>
-<span class="skill-pill">Tableau</span>
-<span class="skill-pill">Excel</span>
-<span class="skill-pill">Data Visualization</span>
-</div>
+  <div class="divider"></div>
 
-<div class="hero-cta">
-<a href="#projects" class="btn btn-primary">View Projects</a>
-<a href="https://www.linkedin.com/in/sofia-hernandez-bellone/?locale=en-US" class="btn btn-ghost" target="_blank">LinkedIn</a>
-<a href="https://github.com/SofiaMHernandez" class="btn btn-ghost" target="_blank">GitHub</a>
-</div>
-
-</section>
-
-<div class="divider"></div>
-
-<section id="about">
-
-<div class="section-header">
-<div class="section-label">Background</div>
-<h2>About Me</h2>
-</div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-label">Background</div>
+      <h2>About Me</h2>
+    </div>
 
 <div class="about-card">
 <h3>Who I am</h3>
@@ -550,38 +550,162 @@ analyzing data, and generating insights for decision-making. Focused on turning 
 insights to drive better decisions in complex environments.
 </p>
 </div>
+  </section>
 
-</section>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <div class="section-label">Portfolio</div>
+      <h2>Projects</h2>
+    </div>
 
-<!-- PROJECTS remain identical except badge removed -->
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <div class="project-top">
+        <h3 class="project-title">💊 Pharmaceutical Drug Spending Analysis</h3>
+        <span class="badge">Completed</span>
+      </div>
+      <p class="project-desc">
+        Exploratory analysis of global pharmaceutical drug spending using SQL and Power BI.
+        Covers country rankings, long-term spending trends over 50 years, GDP and health
+        budget prioritization across 44 OECD countries (1970–2022).
+      </p>
+      <div class="project-tools">
+        <span class="tool-tag">MySQL</span>
+        <span class="tool-tag">Power BI</span>
+        <span class="tool-tag">OECD Data</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/SofiaMHernandez/pharma_analysis/blob/main/README.md" class="btn btn-card" target="_blank">README</a>
+        <a href="https://github.com/SofiaMHernandez/pharma_analysis/blob/main/pharma_analysis.sql" class="btn btn-card" target="_blank">SQL Code</a>
+        <a href="https://raw.githubusercontent.com/SofiaMHernandez/pharma_analysis/main/dashboard_pharma.png" class="btn btn-card" target="_blank">Dashboard</a>
+      </div>
+    </div>
 
-<section id="contact">
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <div class="project-top">
+        <h3 class="project-title">🍷 Wine Quality Analysis</h3>
+        <span class="badge">Completed</span>
+      </div>
+      <p class="project-desc">
+        Exploratory analysis of wine physicochemical properties and their relationship with quality.
+        The original dataset was normalized into 4 relational tables to demonstrate database design
+        skills and enable multi-table JOIN analysis across 1,143 wine samples.
+      </p>
+      <div class="project-tools">
+        <span class="tool-tag">MySQL</span>
+        <span class="tool-tag">Tableau</span>
+        <span class="tool-tag">Database Normalization</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/SofiaMHernandez/wine_analysis/blob/main/README.md" class="btn btn-card" target="_blank">README</a>
+        <a href="https://github.com/SofiaMHernandez/wine_analysis/blob/main/wine_analysis.sql" class="btn btn-card" target="_blank">SQL Code</a>
+        <a href="https://public.tableau.com/app/profile/sofia.hernandez.bellone/viz/WineQualityAnalysisDashboard_17755841219410/Dashboard1" class="btn btn-card" target="_blank">Dashboard</a>
+      </div>
+    </div>
 
-<div class="section-header">
-<div class="section-label">Get in touch</div>
-<h2>Contact</h2>
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <div class="project-top">
+        <h3 class="project-title">🛒 Superstore Sales Analysis</h3>
+        <span class="badge">Completed</span>
+      </div>
+      <p class="project-desc">
+        Exploratory sales analysis of a US-based retail company using SQL.
+        Focused on identifying revenue patterns, customer behavior, logistics
+        performance and seasonal trends to support data-driven business decisions.
+      </p>
+      <div class="project-tools">
+        <span class="tool-tag">MySQL</span>
+        <span class="tool-tag">Kaggle Dataset</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/SofiaMHernandez/sql-sales-analysis/blob/main/README.md" class="btn btn-card" target="_blank">README</a>
+        <a href="https://github.com/SofiaMHernandez/sql-sales-analysis/blob/main/queries.sql" class="btn btn-card" target="_blank">SQL Code</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-card">
+      <div class="project-top">
+        <h3 class="project-title">💰 Personal Finance Dashboard</h3>
+        <span class="badge">Completed</span>
+      </div>
+      <p class="project-desc">
+        Interactive Excel dashboard to track personal income, expenses and savings.
+        Enables clear visualization of spending patterns and supports better
+        financial decision-making through dynamic charts and summaries.
+        <em style="color: var(--muted); font-size: 12px;"> — Note: dashboard content is in Spanish.</em>
+      </p>
+      <div class="project-tools">
+        <span class="tool-tag">Excel</span>
+        <span class="tool-tag">Data Visualization</span>
+      </div>
+      <div class="project-links">
+        <a href="https://docs.google.com/spreadsheets/d/1MJZP4pAZp2lM5Y3ojJ32IAOzH3xcHk-4/edit?gid=1163782539#gid=1163782539" class="btn btn-card" target="_blank">View Dashboard</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header">
+      <div class="section-label">Toolkit</div>
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Data Analysis</h3>
+        <ul class="skill-list">
+          <li>SQL (MySQL)</li>
+          <li>Exploratory Data Analysis</li>
+          <li>Database Normalization</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Visualization</h3>
+        <ul class="skill-list">
+          <li>Power BI</li>
+          <li>Tableau</li>
+          <li>Excel Dashboards</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Domain Knowledge</h3>
+        <ul class="skill-list">
+          <li>Process Optimization</li>
+          <li>Statistical Analysis</li>
+          <li>Scientific Methodology</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-label">Get in touch</div>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-box">
+      <p>
+        Feel free to reach out for collaborations or opportunities.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:hernandezsofiam@yahoo.com" class="btn btn-primary">hernandezsofiam@yahoo.com</a>
+        <a href="https://www.linkedin.com/in/sofia-hernandez-bellone/?locale=en-US" class="btn btn-ghost" target="_blank">LinkedIn</a>
+        <a href="https://github.com/SofiaMHernandez" class="btn btn-ghost" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<div class="contact-box">
-
-<p>
-Feel free to reach out for collaborations or opportunities.
-</p>
-
-<div class="contact-links">
-<a href="mailto:hernandezsofiam@yahoo.com" class="btn btn-primary">hernandezsofiam@yahoo.com</a>
-<a href="https://www.linkedin.com/in/sofia-hernandez-bellone/?locale=en-US" class="btn btn-ghost" target="_blank">LinkedIn</a>
-<a href="https://github.com/SofiaMHernandez" class="btn btn-ghost" target="_blank">GitHub</a>
-</div>
-
-</div>
-
-</section>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-<p>Sofía Hernández Bellone · Data Analyst · Buenos Aires, Argentina · 2026</p>
+  <p>Sofía Hernández Bellone · Data Analyst · Buenos Aires, Argentina · 2026</p>
 </footer>
 
 </body>
