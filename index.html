@@ -1,184 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sofía Hernández Bellone | Data Analyst</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
+<title>Sofía Hernández Bellone | Data Analyst</title>
 
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 40px 0;
-        }
+<style>
 
-        h1, h2 {
-            color: #38bdf8;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
 
-        .section {
-            margin-bottom: 60px;
-        }
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
 
-        .project {
-            background-color: #1e293b;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
+h1, h2 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
 
-        .badge {
-            display: inline-block;
-            padding: 5px 10px;
-            font-size: 12px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
+.section {
+    margin-bottom: 70px;
+}
 
-        .complete {
-            background-color: #22c55e;
-            color: black;
-        }
+.hero {
+    text-align: center;
+    padding: 60px 0;
+}
 
-        .progress {
-            background-color: #facc15;
-            color: black;
-        }
+.hero h1 {
+    font-size: 40px;
+}
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
+.hero h2 {
+    font-weight: normal;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            margin-right: 10px;
-            padding: 8px 12px;
-            background: #38bdf8;
-            color: #0f172a;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+.project {
+    background-color: #1e293b;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
-        .hero {
-            text-align: center;
-            padding: 80px 0;
-        }
+.project p {
+    margin-top: 10px;
+}
 
-        ul {
-            padding-left: 20px;
-        }
-    </style>
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.complete {
+    background-color: #22c55e;
+    color: black;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    margin-right: 10px;
+    padding: 8px 14px;
+    background: #38bdf8;
+    color: #0f172a;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contact {
+    text-align: center;
+}
+
+</style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <!-- HERO -->
-    <div class="hero">
-        <h1>Sofía Hernández Bellone</h1>
-        <h2>Chemical Engineer | Data Analyst</h2>
-        <p>
-            Focused on turning data into clear, actionable insights to drive better decisions in complex environments.
-        </p>
-       
-    </div>
+<!-- HERO -->
+<div class="hero">
 
-    <!-- PROJECTS -->
-    <div class="section">
-        <h1>Projects</h1>
+<h1>Sofía Hernández Bellone</h1>
 
-        <!-- Proyecto 1 -->
-        <div class="project">
-            <div class="badge complete">Completed</div>
-            <h2>💊 Pharmaceutical Drug Spending Analysis</h2>
-            <p>
-                Exploratory analysis of global pharmaceutical drug spending using SQL and Power BI 
-                to identify country rankings, long-term spending trends, GDP and health budget prioritization 
-                across OECD countries.
-            </p>
+<h2>Chemical Engineer | Data Analyst</h2>
 
-            <p><strong>Tools:</strong> MySQL, Power BI</p>
+<p>
+Focused on turning data into clear, actionable insights to drive better decisions in complex environments.
+</p>
 
-            <a href="https://github.com/SofiaMHernandez/pharma_analysis/blob/main/README.md" class="btn">README</a>
-            <a href="https://github.com/SofiaMHernandez/pharma_analysis/blob/main/pharma_analysis.sql" class="btn">SQL Code</a>
-            <a href="https://raw.githubusercontent.com/SofiaMHernandez/pharma_analysis/main/dashboard_pharma.png" class="btn" target="_blank">Dashboard</a>
-           
-            
-        </div>
-
-        <!-- Proyecto 2 -->
-<div class="project">
-    <div class="badge complete">Completed</div>
-    <h2>🍷 Wine Quality Analysis</h2>
-    <p>
-        Exploratory analysis of wine physicochemical properties and their relationship 
-        with quality using SQL (MySQL) and Tableau. The original single-table dataset 
-        was normalized into 4 relational tables to demonstrate database design skills 
-        and enable multi-table JOIN analysis.
-    </p>
-
-    <p><strong>Tools:</strong> MySQL, Tableau</p>
-
-    <a href="https://github.com/SofiaMHernandez/wine_analysis/blob/main/README.md" class="btn">README</a>
-    <a href="https://github.com/SofiaMHernandez/wine_analysis/blob/main/wine_analysis.sql" class="btn">SQL Code</a>
-    <a href="https://public.tableau.com/app/profile/sofia.hernandez.bellone/viz/WineQualityAnalysisDashboard_17755841219410/Dashboard1" class="btn" target="_blank">Dashboard</a>
 </div>
 
-        <!-- Proyecto 3 -->
-        <div class="project">
-            <div class="badge complete">Completed</div>
-            <h2>🛒 Superstore Sales Analysis</h2>
-            <p>
-                Exploratory sales analysis of a US-based retail company using SQL (MySQL). 
-                Focused on identifying revenue patterns, customer behavior, logistics performance, 
-                and seasonal trends to support data-driven decisions.
-            </p>
 
-            <p><strong>Tools:</strong> MySQL</p>
+<!-- PROJECTS -->
 
-            <a href="https://github.com/SofiaMHernandez/sql-sales-analysis/blob/main/README.md" class="btn">README</a>
-            <a href="https://github.com/SofiaMHernandez/sql-sales-analysis/blob/main/queries.sql" class="btn">SQL Code</a>
-        </div>
+<div class="section">
 
-        <div class="project">
-    <div class="badge complete">Completed</div>
-    <h2>💰 Personal Finance Dashboard</h2>
-    <p>
-        Interactive Excel dashboard designed to track personal income, expenses, and savings. 
-        It enables clear visualization of spending patterns and supports better financial decision-making.
-    </p>
-
-    <p><strong>Tools:</strong> Excel</p>
-
-    <a href="https://docs.google.com/spreadsheets/d/1MJZP4pAZp2lM5Y3ojJ32IAOzH3xcHk-4/edit?gid=1163782539#gid=1163782539" class="btn">
-        View Dashboard (Spanish)
-    </a>
-            
-    </div>
-
-    </div>
-
-    
+<h1>Projects</h1>
 
 
-    <!-- CONTACT -->
-    <div class="section">
-        <h1>Contact</h1>
-        <p>Email: hernandezsofiam@yahoo.com</p>
-        <p>
-            <a href="https://www.linkedin.com/in/sofia-hernandez-bellone/?locale=en-US">LinkedIn</a>
-        </p>
-    </div>
+<!-- PROJECT 1 -->
+
+<div class="project">
+
+<div class="badge complete">Completed</div>
+
+<h2>💊 Pharmaceutical Drug Spending Analysis</h2>
+
+<p>
+Exploratory analysis of global pharmaceutical drug spending using SQL and Power BI to identify country rankings,
+long-term spending trends, GDP and health budget prioritization across OECD countries.
+</p>
+
+<p><strong>Tools:</strong> MySQL, Power BI</p>
+
+<a href="https://github.com/SofiaMHernandez/pharma_analysis/blob/main/README.md" class="btn">README</a>
+
+<a href="https://github.com/SofiaMHernandez/pharma_analysis/blob/main/pharma_analysis.sql" class="btn">SQL Code</a>
+
+<a href="https://raw.githubusercontent.com/SofiaMHernandez/pharma_analysis/main/dashboard_pharma.png" class="btn" target="_blank">Dashboard</a>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project">
+
+<div class="badge complete">Completed</div>
+
+<h2>🍷 Wine Quality Analysis</h2>
+
+<p>
+Exploratory analysis of wine physicochemical properties and their relationship with quality using SQL (MySQL)
+and Tableau. The original dataset was normalized into four relational tables to demonstrate database design
+skills and enable multi-table JOIN analysis.
+</p>
+
+<p><strong>Tools:</strong> MySQL, Tableau</p>
+
+<a href="https://github.com/SofiaMHernandez/wine_analysis/blob/main/README.md" class="btn">README</a>
+
+<a href="https://github.com/SofiaMHernandez/wine_analysis/blob/main/wine_analysis.sql" class="btn">SQL Code</a>
+
+<a href="https://public.tableau.com/app/profile/sofia.hernandez.bellone/viz/WineQualityAnalysisDashboard_17755841219410/Dashboard1" class="btn" target="_blank">Dashboard</a>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="project">
+
+<div class="badge complete">Completed</div>
+
+<h2>🛒 Superstore Sales Analysis</h2>
+
+<p>
+Exploratory sales analysis of a US-based retail company using SQL (MySQL). Focused on identifying revenue patterns,
+customer behavior, logistics performance, and seasonal trends to support data-driven decisions.
+</p>
+
+<p><strong>Tools:</strong> MySQL</p>
+
+<a href="https://github.com/SofiaMHernandez/sql-sales-analysis/blob/main/README.md" class="btn">README</a>
+
+<a href="https://github.com/SofiaMHernandez/sql-sales-analysis/blob/main/queries.sql" class="btn">SQL Code</a>
+
+</div>
+
+
+<!-- PROJECT 4 -->
+
+<div class="project">
+
+<div class="badge complete">Completed</div>
+
+<h2>💰 Personal Finance Dashboard</h2>
+
+<p>
+Interactive Excel dashboard designed to track personal income, expenses, and savings. It enables clear visualization
+of spending patterns and supports better financial decision-making.
+</p>
+
+<p><strong>Tools:</strong> Excel</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1MJZP4pAZp2lM5Y3ojJ32IAOzH3xcHk-4/edit?gid=1163782539#gid=1163782539" class="btn">
+View Dashboard (Spanish)
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="section contact">
+
+<h1>Contact</h1>
+
+<p>Email: hernandezsofiam@yahoo.com</p>
+
+<p>
+<a href="https://www.linkedin.com/in/sofia-hernandez-bellone/?locale=en-US" class="btn">LinkedIn</a>
+</p>
+
+</div>
 
 </div>
 
